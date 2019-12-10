@@ -1,0 +1,36 @@
+/* SIMA Ana-Maria - 323CB */
+
+
+ClassState.hs:
+
+    Am definit ClassState ca un Map cu cheia numar intreg si valoarea o lista de liste de String.
+    
+    Am implementat functiile:
+    
+    initEmptyClass :: ClassState
+    insertIntoClass :: ClassState -> InstrType -> [String] -> ClassState
+    getValues:: ClassState -> InstrType -> [[String]]
+    
+    folosindu-ma de functii specifice unui tip Map.
+
+Parser.hs
+
+    Am definit Program ca un Map cu cheia String si valoarea un tuplu de String si ClassState - cheia o sa fie numele clasei, iar valoarea o sa contina numele parintelui si ClassState-ul corespunzator.
+    
+    Am definit Instruction ca lista de String.
+
+    Am implementat functiile deja existente in schelet:
+
+    initEmptyProgram :: Program 
+    getVars :: Program -> [[String]]
+    getClasses :: Program -> [String]
+    getParentClass :: String -> Program -> String
+    getFuncsForClass :: String -> Program -> [[String]]
+    parse :: String -> [Instruction]
+    interpret :: Instruction -> Program -> Program
+
+    si unele in plus:
+
+    insertIntoProgram :: Program -> String->String->ClassState-> Program
+    replace :: String -> String
+    findClass :: String-> Program -> Bool
